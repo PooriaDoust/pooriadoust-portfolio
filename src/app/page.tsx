@@ -1,0 +1,30 @@
+"use client";
+import { useTheme } from "@/app/theme-provider";
+import { useEffect } from "react";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import SkillsSection from "@/components/SkillsSection";
+import CertificationsSection from "@/components/CertificationsSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
+import Navbar from "@/components/Navbar";
+import MobileNav from "@/components/MobileNav";
+
+export default function Home() {
+  const { dark } = useTheme();
+
+  return (
+    <div className="min-h-screen text-foreground transition-colors duration-300 relative overflow-x-hidden custom-scrollbar">
+      <Navbar />
+      <main className="pt-24 flex flex-col gap-24 w-full px-4 sm:px-0 relative z-10">
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <CertificationsSection />
+        <ProjectsSection />
+        <ContactSection />
+      </main>
+      <MobileNav />
+    </div>
+  );
+}
